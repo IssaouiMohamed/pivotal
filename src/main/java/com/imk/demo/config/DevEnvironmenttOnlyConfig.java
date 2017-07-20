@@ -1,15 +1,12 @@
 package com.imk.demo.config;
 
-import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 
 /**
  * 
- * @author issaoumo
+ * @author ISSAOUI Mohamed Khames
  * 
  * This class used to make some configuration (exp: cashing , pool ...)
  * Only for "dev"  environment
@@ -19,7 +16,7 @@ import org.springframework.stereotype.Component;
  */
 		
 @Component
-@Profile("dev")      // for "dev" environment cnfigured in application.properties
+@Profile("dev")      // for "dev" environment configured in application.properties
 public class DevEnvironmenttOnlyConfig {
 	
 /*	

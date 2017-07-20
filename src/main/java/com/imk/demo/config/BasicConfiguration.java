@@ -10,39 +10,27 @@ import org.springframework.stereotype.Component;
  *			* Exmple: basic.name = aaaaa
  */
 
-@Component	
+@Component
 @ConfigurationProperties("basic")
 public class BasicConfiguration {
-	
-	private boolean activeConfig ;
+
+	private boolean activeConfig;
 	private int portNumber;
- 
-	
-	
-	
-	
-	
-	
-	
-	
+
 	public boolean isActiveConfig() {
 		return activeConfig;
 	}
+
 	public void setActiveConfig(boolean activeConfig) {
 		this.activeConfig = activeConfig;
 	}
+
 	public int getPortNumber() {
 		return portNumber;
 	}
+
 	public void setPortNumber(int portNumber) {
 		this.portNumber = portNumber;
 	}
-	 
-	
-	
-	
-	
-	
-	
 
 }

@@ -23,15 +23,15 @@ import com.imk.demo.exception.BuildException;
 public class RestfulResponseExceptionHandler {
 
     @ExceptionHandler(value = NumberFormatException.class)
-    public ResponseEntity<BuildException> numberFormatExceptionExceptionHandler(Exception ex)  {
-        String cause = "PLEASE ENTER A NUMBER !";
+    public ResponseEntity<BuildException> numberFormatExceptionExceptionHandler(NumberFormatException ex)  {
+        String cause = "PLEASE ENTER A NUMBER ! Or YOUR NUMBER GREATER THAN INTEGER VALUE ";
         BuildException exModel = new BuildException(HttpStatus.BAD_REQUEST, cause,ex.getMessage());
         return new ResponseEntity<BuildException>(exModel, HttpStatus.BAD_REQUEST);
 
     }
     
     @ExceptionHandler(value = NullPointerException.class)
-    public ResponseEntity<BuildException> nullPointerExceptionHandler(Exception ex)  {
+    public ResponseEntity<BuildException> nullPointerExceptionHandler(NullPointerException ex)  {
         String cause = "THE OBJECT IS NULL !";
         BuildException exModel = new BuildException(HttpStatus.BAD_REQUEST, cause,ex.getMessage());
         return new ResponseEntity<BuildException>(exModel, HttpStatus.BAD_REQUEST);
@@ -40,9 +40,9 @@ public class RestfulResponseExceptionHandler {
     
    
     @ExceptionHandler(value = MyException.class)
-    public ResponseEntity<BuildException> generalExceptionHandler(Exception ex)  {
-        String cause = "GENERAL EXCEPTION !";
-        BuildException exModel = new BuildException(HttpStatus.BAD_REQUEST, cause,ex.getMessage());
+    public ResponseEntity<BuildException> generalExceptionHandler(MyException ex)  {
+        String cause = "YO ARE CALLING MYEXCEPTION !";
+        BuildException exModel = new BuildException(ex.getStatus(), cause,ex.getMessage());
         return new ResponseEntity<BuildException>(exModel, HttpStatus.BAD_REQUEST);
 
     }
